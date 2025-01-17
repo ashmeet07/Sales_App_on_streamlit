@@ -12,33 +12,34 @@ st.header("Appliances and Electronics Sales across Major US Cities")
 # Company Logo
 st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRENYpBAINLaDDHo5VEv8-8MKyues1370ioeVzpzLVcZrRNY2epAuborGIAukhdHFN_ct4&usqp=CAU", width=200)
 
-# Data Preparation
+# Data Preparation with values in millions
 store_inventory = pd.DataFrame({
     "Store Location": ["Chicago, IL", "Dallas, TX", "Los Angeles, CA", "Miami, FL", "New York, NY"],
-    "Total Inventory Price (USD Million)": [249333571.43, 253808834.6, 278224071.52, 249829554.61, 257512702.17],
-    "Total Quantity Sold Worth (USD Million)": [3156726.82, 2903930.74, 3276299.63, 2962567.02, 2964077.24]
+    "Total Inventory Price (USD Million)": [249333571.43 / 1_000_000, 253808834.6 / 1_000_000, 278224071.52 / 1_000_000, 249829554.61 / 1_000_000, 257512702.17 / 1_000_000],
+    "Total Quantity Sold Worth (USD Million)": [3156726.82 / 1_000_000, 2903930.74 / 1_000_000, 3276299.63 / 1_000_000, 2962567.02 / 1_000_000, 2964077.24 / 1_000_000]
 })
 
 promotion_data = pd.DataFrame({
     "Promotion Type": ["BOGO", "None", "Percentage Discount"],
     "Quantity Sold": [2465, 10122, 2327],
-    "Total Quantity Sold Worth (USD Million)": [1368661.84, 5454551.87, 1239197.32]
+    "Total Quantity Sold Worth (USD Million)": [1368661.84 / 1_000_000, 5454551.87 / 1_000_000, 1239197.32 / 1_000_000]
 })
 
 category_sales = pd.DataFrame({
     "Category": ["Appliances", "Electronics"],
-    "Total Quantity Sold Worth (USD Million)": [7321969.65, 7941631.8]
+    "Total Quantity Sold Worth (USD Million)": [7321969.65 / 1_000_000, 7941631.8 / 1_000_000]
 })
 
 payment_methods = pd.DataFrame({
     "Payment Method": ["Cash", "Credit Card", "Debit Card", "Digital Wallet"],
-    "Total Quantity Sold Worth (USD Million)": [3816860.66, 3829054.57, 3652903.51, 3964782.71]
+    "Total Quantity Sold Worth (USD Million)": [3816860.66 / 1_000_000, 3829054.57 / 1_000_000, 3652903.51 / 1_000_000, 3964782.71 / 1_000_000]
 })
 
 subcategory_sales = pd.DataFrame({
     "Product Name": ["Camera", "Fridge", "Headphones", "Laptop", "Smartphone", "Tablet", "TV", "Washing Machine"],
-    "Total Quantity Sold Worth (USD Million)": [1895104.13, 1938012.69, 1846334.45, 1709159.24, 1931310.04, 1996253.02, 2049493.86, 1897934.02]
+    "Total Quantity Sold Worth (USD Million)": [1895104.13 / 1_000_000, 1938012.69 / 1_000_000, 1846334.45 / 1_000_000, 1709159.24 / 1_000_000, 1931310.04 / 1_000_000, 1996253.02 / 1_000_000, 2049493.86 / 1_000_000, 1897934.02 / 1_000_000]
 })
+
 
 sentiment_analysis = pd.DataFrame({
     "Customer Gender": ["Female", "Female", "Female", "Female", "Female", "Female", "Female", "Female",
