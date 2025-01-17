@@ -56,7 +56,14 @@ forecast_demand = 1485670
 actual_demand = 1495442
 
 # Key Metrics Section
-st.subheader("Key Metrics")
+st.subheader("Key Metrics Overview")
+st.markdown("""
+In this section, we present key metrics for Walmart's performance, including total inventory levels, forecasted demand, and actual demand. These metrics are essential to understanding the alignment of inventory with customer demand, providing insights into stock management and sales optimization. 
+
+- **Total Inventory Level**: The inventory across the five stores analyzed amounts to over 1.2 million units, which indicates that Walmart has significant resources stocked.
+- **Forecasted Demand**: The forecast predicts a total demand of approximately 1.5 million units, highlighting expected consumer purchases.
+- **Actual Demand**: In comparison, the actual demand slightly exceeds the forecast, totaling around 1.5 million units. This small variance shows that Walmart's forecasting model is fairly accurate.
+""")
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -67,7 +74,12 @@ with col3:
     st.metric(label="Actual Demand", value=f"{actual_demand:,}")
 
 # Store Analysis
-st.subheader("Store Performance")
+st.subheader("Store Performance Analysis")
+st.markdown("""
+The following table displays the total inventory price and quantity sold worth across Walmart stores located in major cities: Chicago, Dallas, Los Angeles, Miami, and New York. Analyzing this data allows us to compare how each store is performing in terms of sales, identifying the most successful locations and the impact of inventory management.
+
+From the data, **Los Angeles, CA** shows the highest total sales value at approximately $3.3 billion, which may reflect both a larger customer base and possibly higher product demand compared to other cities like Miami and Chicago, which exhibit lower total sales figures.
+""")
 st.dataframe(store_inventory.style.format({
     "Total Inventory Price (USD Million)": "${:,.2f}",
     "Total Quantity Sold Worth (USD Million)": "${:,.2f}"
@@ -84,7 +96,12 @@ store_chart = px.bar(
 st.plotly_chart(store_chart)
 
 # Promotion Analysis
-st.subheader("Promotion Performance")
+st.subheader("Promotion Performance Analysis")
+st.markdown("""
+In this section, we analyze the impact of different promotion types on sales. The promotions considered are Buy One Get One (BOGO), no promotion, and percentage discounts. 
+
+It is evident that **percentage discounts** have the highest total sales worth, contributing significantly to the overall revenue. Promotions like BOGO also show a strong effect, contributing over $1.3 billion in sales. This analysis suggests that introducing strategic promotions could drive further sales, especially in underperforming stores.
+""")
 st.dataframe(promotion_data.style.format({
     "Total Quantity Sold Worth (USD Million)": "${:,.2f}"
 }))
@@ -99,7 +116,10 @@ promotion_chart = px.pie(
 st.plotly_chart(promotion_chart)
 
 # Category Sales Analysis
-st.subheader("Category Sales")
+st.subheader("Category-wise Sales Performance")
+st.markdown("""
+The sales breakdown between Appliances and Electronics shows that **Electronics** take the lead in terms of sales, contributing approximately $7.9 billion, compared to $7.3 billion for Appliances. Understanding the split between these categories helps Walmart optimize its marketing efforts and inventory management, potentially focusing more on electronics as a higher-selling category.
+""")
 st.dataframe(category_sales.style.format({
     "Total Quantity Sold Worth (USD Million)": "${:,.2f}"
 }))
@@ -115,7 +135,10 @@ category_chart = px.bar(
 st.plotly_chart(category_chart)
 
 # Payment Methods Analysis
-st.subheader("Payment Methods")
+st.subheader("Sales by Payment Method")
+st.markdown("""
+Examining the payment methods used by customers provides insights into the preferred options for transactions. The analysis reveals that **Digital Wallets** and **Credit Cards** dominate the payment landscape, reflecting the ongoing shift toward digital and contactless payments. Walmart can use this data to further promote digital payment options and ensure seamless transactions for customers.
+""")
 st.dataframe(payment_methods.style.format({
     "Total Quantity Sold Worth (USD Million)": "${:,.2f}"
 }))
@@ -130,7 +153,10 @@ payment_chart = px.pie(
 st.plotly_chart(payment_chart)
 
 # Subcategory Sales Analysis
-st.subheader("Subcategory Sales")
+st.subheader("Sales by Product Subcategory")
+st.markdown("""
+In this section, we analyze the performance of individual product subcategories. Products like **TVs**, **Smartphones**, and **Tablets** lead the sales charts, with TVs generating over $2 billion in sales alone. Identifying top-selling products helps Walmart focus its inventory management and promotional efforts to meet consumer demand.
+""")
 st.dataframe(subcategory_sales.style.format({
     "Total Quantity Sold Worth (USD Million)": "${:,.2f}"
 }))
@@ -147,6 +173,9 @@ st.plotly_chart(subcategory_chart)
 
 # Sentiment Analysis by Gender
 st.subheader("Gender-wise Purchasing Trends")
+st.markdown("""
+By analyzing sales based on customer gender, we gain valuable insights into purchasing patterns. For instance, **females** tend to purchase more **Tablets** and **TVs**, while **males** show higher purchasing behavior for products like **Cameras** and **TVs**. Tailoring marketing and promotional strategies to these preferences can enhance sales and customer satisfaction.
+""")
 st.dataframe(sentiment_analysis.style.format({
     "Quantity Sold": "{:,}"
 }))
@@ -163,11 +192,13 @@ gender_chart = px.bar(
 st.plotly_chart(gender_chart)
 
 # Conclusion and Strategy
-st.subheader("Conclusion and Strategy")
+st.subheader("Conclusion and Strategic Recommendations")
 st.markdown("""
+Based on the analysis, we propose the following strategies to increase Walmart's sales performance:
+
 - **Expand Promotions**: Focus on increasing percentage discounts and BOGO offers in underperforming stores.
-- **Optimize Inventory**: Ensure high-demand products like TVs and Tablets are stocked adequately.
-- **Enhance Digital Payments**: Highlight digital wallet options to cater to modern payment preferences.
-- **Targeted Marketing**: Leverage city-specific insights to create localized campaigns for Miami and Dallas.
+- **Optimize Inventory**: Ensure high-demand products like TVs and Tablets are stocked adequately across all stores.
+- **Enhance Digital Payments**: Promote digital wallet options to cater to modern payment preferences, especially among younger consumers.
+- **Targeted Marketing**: Use city-specific insights to create localized campaigns for cities like Miami and Dallas, where product demand may differ.
 - **Tailored Strategies by Gender**: Focus on promoting categories popular among specific genders. For example, increase promotions on Tablets and TVs for females and on Cameras and TVs for males.
 """)
