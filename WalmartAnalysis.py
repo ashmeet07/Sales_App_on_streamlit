@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # Title and Header
+st.balloons()
 st.set_page_config(page_title="Walmart Sales Report", page_icon="💼", layout="wide")
 st.title("Walmart Sales Analysis Report")
 st.header("Appliances and Electronics Sales across Major US Cities")
