@@ -81,7 +81,7 @@ st.subheader("Store Performance Analysis")
 st.markdown("""
 The following table displays the total inventory price and quantity sold worth across Walmart stores located in major cities: Chicago, Dallas, Los Angeles, Miami, and New York. Analyzing this data allows us to compare how each store is performing in terms of sales, identifying the most successful locations and the impact of inventory management.
 
-From the data, **Los Angeles, CA** shows the highest total sales value at approximately $3.3 billion, which may reflect both a larger customer base and possibly higher product demand compared to other cities like Miami and Chicago, which exhibit lower total sales figures.
+From the data, **Los Angeles, CA** shows the highest total sales value at approximately $3.3 million, which may reflect both a larger customer base and possibly higher product demand compared to other cities like Miami and Chicago, which exhibit lower total sales figures.
 """)
 st.dataframe(store_inventory.style.format({
     "Total Inventory Price (USD Million)": "${:,.2f}",
@@ -103,7 +103,7 @@ st.subheader("Promotion Performance Analysis")
 st.markdown("""
 In this section, we analyze the impact of different promotion types on sales. The promotions considered are Buy One Get One (BOGO), no promotion, and percentage discounts. 
 
-It is evident that **percentage discounts** have the highest total sales worth, contributing significantly to the overall revenue. Promotions like BOGO also show a strong effect, contributing over $1.3 billion in sales. This analysis suggests that introducing strategic promotions could drive further sales, especially in underperforming stores.
+It is evident that **percentage discounts** have the highest total sales worth, contributing significantly to the overall revenue. Promotions like BOGO also show a strong effect, contributing over $1.3 million in sales. This analysis suggests that introducing strategic promotions could drive further sales, especially in underperforming stores.
 """)
 st.dataframe(promotion_data.style.format({
     "Total Quantity Sold Worth (USD Million)": "${:,.2f}"
@@ -121,7 +121,7 @@ st.plotly_chart(promotion_chart)
 # Category Sales Analysis
 st.subheader("Category-wise Sales Performance")
 st.markdown("""
-The sales breakdown between Appliances and Electronics shows that **Electronics** take the lead in terms of sales, contributing approximately $7.9 billion, compared to $7.3 billion for Appliances. Understanding the split between these categories helps Walmart optimize its marketing efforts and inventory management, potentially focusing more on electronics as a higher-selling category.
+The sales breakdown between Appliances and Electronics shows that **Electronics** take the lead in terms of sales, contributing approximately $7.9 million, compared to $7.3 million for Appliances. Understanding the split between these categories helps Walmart optimize its marketing efforts and inventory management, potentially focusing more on electronics as a higher-selling category.
 """)
 st.dataframe(category_sales.style.format({
     "Total Quantity Sold Worth (USD Million)": "${:,.2f}"
@@ -158,7 +158,7 @@ st.plotly_chart(payment_chart)
 # Subcategory Sales Analysis
 st.subheader("Sales by Product Subcategory")
 st.markdown("""
-In this section, we analyze the performance of individual product subcategories. Products like **TVs**, **Smartphones**, and **Tablets** lead the sales charts, with TVs generating over $2 billion in sales alone. Identifying top-selling products helps Walmart focus its inventory management and promotional efforts to meet consumer demand.
+In this section, we analyze the performance of individual product subcategories. Products like **TVs**, **Smartphones**, and **Tablets** lead the sales charts, with TVs generating over $2 million in sales alone. Identifying top-selling products helps Walmart focus its inventory management and promotional efforts to meet consumer demand.
 """)
 st.dataframe(subcategory_sales.style.format({
     "Total Quantity Sold Worth (USD Million)": "${:,.2f}"
