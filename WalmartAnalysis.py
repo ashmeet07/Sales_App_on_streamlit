@@ -2,17 +2,14 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Title and Header
 st.set_page_config(page_title="Walmart Sales Report", page_icon="💼", layout="wide")
 
 st.balloons()
 st.title("Walmart Sales Analysis Report")
 st.header("Appliances and Electronics Sales across Major US Cities")
 
-# Company Logo
 st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRENYpBAINLaDDHo5VEv8-8MKyues1370ioeVzpzLVcZrRNY2epAuborGIAukhdHFN_ct4&usqp=CAU", width=200)
 
-# Data Preparation with values in millions
 store_inventory = pd.DataFrame({
     "Store Location": ["Chicago, IL", "Dallas, TX", "Los Angeles, CA", "Miami, FL", "New York, NY"],
     "Total Inventory Price (USD Million)": [249333571.43 / 1_000_000, 253808834.6 / 1_000_000, 278224071.52 / 1_000_000, 249829554.61 / 1_000_000, 257512702.17 / 1_000_000],
@@ -53,12 +50,11 @@ sentiment_analysis = pd.DataFrame({
                        657, 642, 595, 615, 591, 633, 609, 611]
 })
 
-# Total Inventory and Demand Data
 inventory_level = 1265609
 forecast_demand = 1485670
 actual_demand = 1495442
 
-# Key Metrics Section
+
 st.subheader("Key Metrics Overview")
 st.markdown("""
 In this section, we present key metrics for Walmart's performance, including total inventory levels, forecasted demand, and actual demand. These metrics are essential to understanding the alignment of inventory with customer demand, providing insights into stock management and sales optimization. 
@@ -76,7 +72,7 @@ with col2:
 with col3:
     st.metric(label="Actual Demand", value=f"{actual_demand:,}")
 
-# Store Analysis
+
 st.subheader("Store Performance Analysis")
 st.markdown("""
 The following table displays the total inventory price and quantity sold worth across Walmart stores located in major cities: Chicago, Dallas, Los Angeles, Miami, and New York. Analyzing this data allows us to compare how each store is performing in terms of sales, identifying the most successful locations and the impact of inventory management.
@@ -98,7 +94,7 @@ store_chart = px.bar(
 )
 st.plotly_chart(store_chart)
 
-# Promotion Analysis
+
 st.subheader("Promotion Performance Analysis")
 st.markdown("""
 In this section, we analyze the impact of different promotion types on sales. The promotions considered are Buy One Get One (BOGO), no promotion, and percentage discounts. 
@@ -118,7 +114,6 @@ promotion_chart = px.pie(
 )
 st.plotly_chart(promotion_chart)
 
-# Category Sales Analysis
 st.subheader("Category-wise Sales Performance")
 st.markdown("""
 The sales breakdown between Appliances and Electronics shows that **Electronics** take the lead in terms of sales, contributing approximately $7.9 million, compared to $7.3 million for Appliances. Understanding the split between these categories helps Walmart optimize its marketing efforts and inventory management, potentially focusing more on electronics as a higher-selling category.
@@ -137,7 +132,7 @@ category_chart = px.bar(
 )
 st.plotly_chart(category_chart)
 
-# Payment Methods Analysis
+
 st.subheader("Sales by Payment Method")
 st.markdown("""
 Examining the payment methods used by customers provides insights into the preferred options for transactions. The analysis reveals that **Digital Wallets** and **Credit Cards** dominate the payment landscape, reflecting the ongoing shift toward digital and contactless payments. Walmart can use this data to further promote digital payment options and ensure seamless transactions for customers.
@@ -155,7 +150,7 @@ payment_chart = px.pie(
 )
 st.plotly_chart(payment_chart)
 
-# Subcategory Sales Analysis
+
 st.subheader("Sales by Product Subcategory")
 st.markdown("""
 In this section, we analyze the performance of individual product subcategories. Products like **TVs**, **Smartphones**, and **Tablets** lead the sales charts, with TVs generating over $2 million in sales alone. Identifying top-selling products helps Walmart focus its inventory management and promotional efforts to meet consumer demand.
@@ -194,7 +189,7 @@ gender_chart = px.bar(
 )
 st.plotly_chart(gender_chart)
 
-# Conclusion and Strategy
+
 st.subheader("Conclusion and Strategic Recommendations")
 st.markdown("""
 Based on the analysis, we propose the following strategies to increase Walmart's sales performance:
